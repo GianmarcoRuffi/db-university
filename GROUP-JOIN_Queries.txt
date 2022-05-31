@@ -93,7 +93,13 @@ ________________________________________________________________________________
 relativo dipartimento, in ordine alfabetico per cognome e nome
 
 
-
+SELECT `students`.`surname`,`students`.`name`,`students`.`registration_number`, `students`.`email`, `departments`.`name`, `degrees`.`name`
+FROM `students`
+JOIN `degrees`
+ON `degrees`.`id` = `students`.`degree_id`
+JOIN `departments`
+ON `departments`.`id` = `degrees`.`department_id`  
+ORDER BY `students`.`surname` ASC
 
 
 ___________________________________________________________________________________________________________
